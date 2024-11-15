@@ -1,0 +1,50 @@
+/* Define the animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Basic card styling */
+.featuresCard {
+    background-color: black !important;
+    color: aliceblue !important;
+    border: none;
+    min-height: 400px;
+    /* Set a minimum height for larger cards */
+    padding: 20px;
+    /* Add padding for a more spacious look */
+    opacity: 0;
+    /* Start hidden */
+    transform: translateY(20px);
+    /* Start slightly offset */
+    height: auto;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Add this class when the element is in view */
+.featuresCard.active {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.mainPagePara {
+    opacity: 0.5;
+}
+
+.cardsBtns {
+    width: 30%;
+    text-align: center;
+}
+
+.cardsBtns:hover {
+    background-color: black;
+    color: aliceblue;
+}
