@@ -1,0 +1,68 @@
+.user-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 91.2vh;
+    background-color: #000000;
+}
+
+.profile-card {
+    text-align: center;
+    background: rgb(0, 0, 0);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.profile-card .profile-pic {
+    border: 2px solid var(--primary);
+}
+
+.profile-card h2 {
+    color: aliceblue !important;
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.profile-card p {
+    color: aliceblue !important;
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.loading-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    /* Dark background */
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.loading-screen .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    /* Light grey */
+    border-top: 5px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
