@@ -1,7 +1,8 @@
 import React from 'react';
 import './Heading.css';
 import mainImg from './../../assets/mainBackk.jpg';
-import { websiteName } from '../../constants/Website/BasicInfo';
+import BasicInfo from "./../../constants/website/BasicInfo";
+import { websiteName } from '../../constants/website/BasicInfo';
 
 
 const Heading = () => {
