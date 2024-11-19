@@ -47,7 +47,10 @@ const Login = () => {
 
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            toast.success("Successfully logged in!");
+            toast.success("Successfully logged in!"), { autoClose: 2000 };
+            setTimeout(() => {
+                window.location.href = 'profile';
+            }, 2500);
             // Optionally redirect the user or handle login success here
         } catch (error) {
             console.error("Login error:", error); // Logs the full error response to the console
