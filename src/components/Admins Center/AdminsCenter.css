@@ -1,0 +1,25 @@
+.admin-center {
+    padding: 20px;
+    background-color: #121212;
+    color: white;
+    text-align: center;
+}
+
+.admin-center table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.admin-center table,
+.admin-center th,
+.admin-center td {
+    border: 1px solid white;
+    padding: 10px;
+    text-align: left;
+}
+
+.admin-center th {
+    background-color: #333;
+    color: white;
+}

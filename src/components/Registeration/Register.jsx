@@ -43,10 +43,24 @@ const Register = () => {
             return;
         }
 
+        const capitalizeFirstLetter = (name) => {
+            return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+        };
+
+        // Validate names to ensure they only contain letters
+        if (!/^[A-Za-z]+$/.test(firstName) || !/^[A-Za-z]+$/.test(lastName)) {
+            toast.error("First and last names must contain only letters!");
+            return;
+        }
+
         if (password !== confirmPassword) {
             toast.error("Passwords do not match!");
             return;
-        };
+        }
+
+        // Capitalize the first letter of firstName and lastName
+        const formattedFirstName = capitalizeFirstLetter(firstName);
+        const formattedLastName = capitalizeFirstLetter(lastName);
 
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -54,12 +68,13 @@ const Register = () => {
 
             // Save user data to Firestore
             await setDoc(doc(db, "users", user.uid), {
-                firstName,
-                lastName,
+                firstName: formattedFirstName,
+                lastName: formattedLastName,
                 username,
                 email,
                 gender,
-                password
+                isAdmin: false, // Set to false by default
+                password,
             });
 
             toast.success("Account created successfully!");
@@ -70,13 +85,15 @@ const Register = () => {
                 email: "",
                 password: "",
                 confirmPassword: "",
-                gender: ""
+                gender: "",
             });
+            window.location.href = '/profileConfig'; // Redirect to profile page
             setFormCompletion(0);
         } catch (error) {
             toast.error("Registration failed: " + error.message);
         }
     };
+
 
     return (
         <section className="registerFrom d-flex justify-content-center align-items-center">
